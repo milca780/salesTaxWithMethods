@@ -23,33 +23,33 @@ public class SalesTaxTests {
     /*Tests state tax*/
     @Test
     public void whenPriceIsWholeNumber_thenStateTaxIsCorrect() {
-        assertEquals(4, Main.calculateTax(100, STATE_TAX_RATE));
+        assertEquals(4, Main.calculateTax(100));
     }
 
     @Test
     public void whenPriceIsDouble_thenStateTaxIsCorrect() {
-        assertEquals(5.1000000000000005, Main.calculateTax(127.50, STATE_TAX_RATE));
+        assertEquals(5.1000000000000005, Main.calculateTax(127.50));
     }
 
     @Test
     public void whenPriceIsLessThanADollar_thenStateTaxIsCorrect() {
-        assertEquals(0.012, Main.calculateTax(0.30, STATE_TAX_RATE));
+        assertEquals(0.012, Main.calculateTax(0.30));
     }
 
     /*Tests county tax*/
     @Test
     public void whenPriceIsWholeNumber_thenCountyTaxIsCorrect() {
-        assertEquals(2, Main.calculateTax(100, COUNTY_TAX_RATE));
+        assertEquals(2, Main.calculateTax(100));
     }
 
     @Test
     public void whenPriceIsDouble_thenCountyTaxIsCorrect() {
-        assertEquals(2.5500000000000003, Main.calculateTax(127.50, COUNTY_TAX_RATE));
+        assertEquals(2.5500000000000003, Main.calculateTax(127.50));
     }
 
     @Test
     public void whenPriceIsLessThanADollar_thenCountyTaxIsCorrect() {
-        assertEquals(0.006, Main.calculateTax(0.30, COUNTY_TAX_RATE));
+        assertEquals(0.006, Main.calculateTax(0.30));
     }
 
     /*Tests total method*/
