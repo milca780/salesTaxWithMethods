@@ -32,8 +32,8 @@ public class Main {
      * accepts price and tax rate as parameters and
      * calculates and returns the tax
      * */
-    public static double calculateTax(double Price, double totalTax){
-        double total = Price + (totalTax / 100);
+    public static double calculateTax(double Price, double taxRate){
+        double total = Price * taxRate;
         return total;
         
 
@@ -43,8 +43,7 @@ public class Main {
      * returns the total
      * */
     public static double calculateTotal(double num1, double num2){
-       double total = num1 + num2;
-       return total;
+        return num1 + num2;
     }
 
     /* Write a method called displayTotals that takes
@@ -53,7 +52,10 @@ public class Main {
     public static double displayTotals(Scanner purchasePrice, double stateTax, double countyTax, double totalTax, double totalPrice){
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
         System.out.printf(String.valueOf(purchasePrice), totalPrice);
-        System.out.printf(String.valueOf("Your total tax is: $%.2f"), stateTax, countyTax, totalTax);
+        System.out.printf("Your state tax is: $%.2f", stateTax);
+        System.out.printf("Your county tax is: $%.2f", countyTax);
+        System.out.printf("Your total tax is: $%.2f", totalTax);
+
 
         return stateTax;
     }
